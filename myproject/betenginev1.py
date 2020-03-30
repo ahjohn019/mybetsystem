@@ -23,20 +23,25 @@ def main():
                 if betteam == '1':
                     print("Your Bet Team : A(0.11)")
                 else:
-                    print("Your Bet Team : B(0.2)")
+                    print("Your Bet Team : B(2.2)")
                 betamount = input("How much for bet ? : ")
                 print("Your Bet Amount : ", betamount)
                 currentaccount -= int(betamount)
                 
                 print('Here Is Your Remain After Bet : ',currentaccount)
+
                 print('A : ' + str(homemarksfirst) +' B:'+str(awaymarksfirst))
 
-                if (homemarksfirst < awaymarksfirst):
+                if betteam == '2':
                     print("Away Wins")
-                elif(homemarksfirst == awaymarksfirst):
-                    print("Draw")
+                    awaywin = int(betamount)*2.2
+                    print(awaywin)
+                    currentaccount += awaywin
                 else:
-                    print("Home Wins")
+                    print("You Lose")
+                    betamount = 0
+                    currentaccount -= betamount
+
                 
         elif selection == "5":
             print("Good Bye")
