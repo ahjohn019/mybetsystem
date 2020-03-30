@@ -3,11 +3,10 @@
 
 def main():
     currentaccount = 100
-    homemarksfirst = 0
+    homemarksfirst = 4
     awaymarksfirst = 4
     homemarkssecond = 2
     awaymarkssecond = 3
-
 
     while True:
         print("Your Current Account:", currentaccount)
@@ -53,6 +52,9 @@ def main():
                         awaywin = int(betamount)*2.2
                         print(awaywin)
                         currentaccount += awaywin
+                    if homemarksfirst == awaymarksfirst:
+                        print("Draw")
+                        currentaccount += int(betamount)
                     else:
                         print("You Lose")
                         betamount = 0
@@ -64,6 +66,9 @@ def main():
                         awaywin = int(betamount)*3
                         print(awaywin)
                         currentaccount += awaywin
+                    if homemarkssecond == awaymarkssecond:
+                        print("Draw")
+                        currentaccount += int(betamount)
                     else:
                         print("You Lose")
                         betamount = 0
