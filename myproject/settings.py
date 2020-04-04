@@ -32,6 +32,7 @@ STATICFILES_DIRS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'esport_db',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
          'OPTIONS': {
-            'options': '-c search_path=electronicdevices'
+            'options': '-c search_path=esport_data'
         },
         'NAME': 'postgres',
         'USER': 'postgres',
