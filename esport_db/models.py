@@ -1,24 +1,31 @@
 from django.db import models
 
 # Create your models here.
-class upcomingmatches(models.Model):
+class nextmatches(models.Model):
     leaguename = models.CharField(max_length=900)
-    opponent_one = models.CharField(max_length=100)
-    opponent_two = models.CharField(max_length=100)
-    datetime = models.DateTimeField()
-    odds_one = models.DecimalField(max_digits=5,decimal_places=2)
-    odds_two = models.DecimalField(max_digits=5,decimal_places=2)
+    games_id = models.IntegerField()
+    opponent_one = models.CharField(max_length=100,blank=True)
+    opponent_two = models.CharField(max_length=100,blank=True)
+    datetime = models.CharField(max_length=100,blank=True)
+    odds_one = models.IntegerField()
+    odds_two = models.IntegerField()
+
 
 class livematches(models.Model):
     leaguename = models.CharField(max_length=900)
+    matches_id = models.IntegerField()
     opponent_one = models.CharField(max_length=100)
     opponent_two = models.CharField(max_length=100)
-    datetime = models.DateTimeField()
+    datetime = models.CharField(max_length=100,blank=True)
     livescore_opone = models.IntegerField()
     livescore_optwo = models.IntegerField()
+    matches_status = models.CharField(max_length=100)
+    odds_one = models.IntegerField()
+    odds_two = models.IntegerField()
+
 
 class listmatches(models.Model):
-    leaguename = models.CharField(max_length=900)
+    leaguename = models.CharField(max_length=950)
     opponent_one = models.CharField(max_length=100)
     opponent_two = models.CharField(max_length=100)
     datetime = models.DateTimeField()
