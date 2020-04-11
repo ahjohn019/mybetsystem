@@ -32,7 +32,7 @@ STATICFILES_DIRS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'esport_db',
+    'esportlist_db',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '123456',
-        'HOST': '192.168.1.120',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

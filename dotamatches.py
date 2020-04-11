@@ -1,8 +1,7 @@
-import json
-import time
-import schedule
 import requests
-from django.utils import timezone
+import json
+import schedule
+import time
 from myproject.wsgi import *
 from esportlist_db.models import nextmatches, listmatches, livematches
 from datetime import datetime
@@ -10,13 +9,12 @@ import urllib3
 urllib3.disable_warnings()
 
 #dota api upcoming macthes   
-def getnextmatches():
-    token = 'M-gxTfZLAuoLWGjTCK214C9k8lthOMrkYeBs-FvY87ucxjJenCI'
-    dotaupcomingmatch = requests.get('https://api.pandascore.co/dota2/matches/upcoming?token={0}'.format(token),verify=False)
-    createdata = json.loads(dotaupcomingmatch.text)
+def getupcomingmatches():
+    dotaupcomingmatch = requests.get('https://api.pandascore.co/dota2/matches/upcoming?token=M-gxTfZLAuoLWGjTCK214C9k8lthOMrkYeBs-FvY87ucxjJenCI')
+    data = json.loads(dotaupcomingmatch.text)
 
-
-    for d in createdata:
+    for d in data:
+        print('Upcoming Matches')
         if len(d['opponents']) != 1 and len(d['opponents']) != 0:
             if len(d['opponents']) == 0:
                 pass
@@ -85,4 +83,4 @@ def sched_livematches():
 
 
 if __name__ == "__main__":
-    createlivematches()
+    getupcomingmatches()
